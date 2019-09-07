@@ -1,0 +1,80 @@
+{
+  "name": "nest-typescript-graphql",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Example using nest with typescript and graphql",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start:dev": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
+    "start:debug": "tsc-watch -p tsconfig.build.json --onSuccess \"node --inspect-brk dist/main.js\"",
+    "start:prod": "node dist/main.js",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "typings": "ts-node src/generate-typings.ts"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.5.3",
+    "@nestjs/core": "^6.5.3",
+    "@nestjs/graphql": "6.5.1",
+    "@nestjs/microservices": "^6.5.3",
+    "@nestjs/platform-express": "^6.5.3",
+    "@nestjs/websockets": "^6.5.3",
+    "@typescript-eslint/eslint-plugin": "2.1.0",
+    "@typescript-eslint/parser": "2.1.0",
+    "apollo-server-express": "2.9.3",
+    "graphql": "14.5.4",
+    "graphql-tools": "4.0.5",
+    "reflect-metadata": "0.1.13",
+    "rimraf": "3.0.0",
+    "rxjs": "6.5.2",
+    "standard": "14.1.0",
+    "supervillains": "3.0.0"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "6.5.3",
+    "@types/express": "4.17.1",
+    "@types/jest": "24.0.17",
+    "@types/node": "12.7.2",
+    "@types/supertest": "2.0.8",
+    "jest": "24.9.0",
+    "prettier": "1.18.2",
+    "supertest": "4.0.2",
+    "ts-jest": "24.0.2",
+    "ts-node": "8.3.0",
+    "tsc-watch": "2.4.0",
+    "tsconfig-paths": "3.8.0",
+    "tslint": "5.18.0",
+    "typescript": "3.5.3"
+  },
+  "standard": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint/eslint-plugin"
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "keywords": []
+}

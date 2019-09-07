@@ -1,0 +1,8 @@
+type Supervillain {
+  id: ID
+  name: String
+}
+
+type Query {
+  allSupervillains: [Supervillain]!
+}
